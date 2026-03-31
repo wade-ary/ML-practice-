@@ -1,0 +1,60 @@
+1. How would you define clustering? Can you name a few clustering
+algorithms?
+
+Clustering = grouping data points without labels so that similar points are together and dissimilar points are apart.
+
+K-Means, DBSCAN, Gaussian Mixture Models (GMM), Agglomerative (Hierarchical) Clustering
+
+2. What are some of the main applications of clustering algorithms?
+
+Customer Segmentation, Pattern discovery, Image segmentation, Anomal Detection, Preprocessing for other models.
+
+3. Describe two techniques to select the right number of clusters
+when using k-means.
+
+Elbow method: Plot inertia (within-cluster variance) vs number of clusters (k)
+Look for the “elbow” point where improvement slows.
+
+Silhouette Score: Measures how well each point fits its cluster vs others
+
+4. What is label propagation? Why would you implement it, and
+how?
+
+A semi-supervised learning method that spreads labels from a small labeled set to unlabeled data based on similarity(clustering)
+Intuituion: “Points close to each other likely share the same label”
+
+5. Can you name two clustering algorithms that can scale to large
+datasets? And two that look for regions of high density?
+
+Scaleable: Mini-batch/Normal K means
+
+Density based: DBSCAN, Gaussian Mixture Models.
+
+6. Can you think of a use case where active learning would be useful?
+How would you implement it?
+
+ctive learning lets the model select the most uncertain data points to be labeled, 
+focusing labeling effort where it matters most. The model is trained, 
+then repeatedly updated using these uncertain examples, gradually reducing uncertainty across the dataset.
+
+Use case: Medical image classification.
+How: Train model on labeled data, score unlabeled data which is most uncertain (lowest prob, close to boundary)
+
+7. What is the difference between anomaly detection and novelty
+detection?
+
+Anomaly detection: Detects rare or abnormal points within the dataset
+Novelty detection: Detects new, unseen patterns compared to clean training data
+
+8. What is a Gaussian mixture? What tasks can you use it for?
+
+A probabilistic model that assumes data is generated from a mix of several Gaussian (normal) distributions
+Instead of hard clusters → you get probabilities.
+
+Use case: Soft clustering use probabilities, Density estimation, Anomaly detection(low probabilty points)
+
+9. Can you name two techniques to find the right number of clusters
+when using a Gaussian mixture model?
+
+BIC (Bayesian Information Criterion)
+AIC (Akaike Information Criterion)
